@@ -1,0 +1,53 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {
+
+Title = "Suki";
+
+Text  = "Use This in Weapon sim 2 :D";})
+
+local farming = false
+
+-- Command 2: farm
+
+-- IMPORTANT! Dont mess with the autofarm unless you know what ur doing.
+
+ 
+
+game.Players.LocalPlayer.Chatted:connect(function(msg)
+
+if string.lower(msg):sub(1) =="farm" then
+
+    farming = true
+
+    while farming do
+
+        wait()
+
+        for i = 1,020 do 
+
+            if game.Players.LocalPlayer.Character:FindFirstChild("sword") then
+
+                game.Players.LocalPlayer.Character.sword.Handle.pr.RemoteEvent:FireServer()
+
+            else
+
+                game.Players.LocalPlayer.Backpack.sword.Handle.pr.RemoteEvent:FireServer()
+
+            end
+
+        end
+
+    end
+
+    end
+
+end)
+
+game.Players.LocalPlayer.Chatted:connect(function(msg)
+
+if string.lower(msg):sub(1) =="unfarm" then
+
+    farming = false
+
+    end
+
+end)
